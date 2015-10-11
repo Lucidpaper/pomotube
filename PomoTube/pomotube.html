@@ -5,9 +5,36 @@
 <body>
   <h1>Welcome to Meteor!</h1>
 
-  {{> hello}}
+  {{> main}}
 </body>
 
-<template name="hello">
-  <div id="player"></div>
+<template name="main">
+	{{#if waiting_to_start_pomodoro}}
+		<button type="button" class='start-pom' >Start Pomodoro</button>
+	{{/if}}
+	
+	{{#if in_pomodoro}}
+		{{current_time}}
+		<button type="button" class='stop-pom' >Stop Pomodoro</button>
+	{{/if}}
+		
+	{{#if waiting_to_start_break}}
+		<button type="button" class='start-break' >Start Break</button>
+	{{/if}}
+	
+	
+	<div id="player" class="hidden"></div>
+	
+		
+	
+	
+<!--
+	{{#if waiting_to_start_break}}
+		<button type="button" class='start-break' >Start Break</button>
+	{{/if}}
+-->
+
+<!-- 		<div id="player"></div>		 -->
+  
+  
 </template>

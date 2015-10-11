@@ -27,3 +27,14 @@ ddp.connect().then(function(){
 		chrome.browserAction.setBadgeText({text: posts.toString()});
 	});
 });
+
+chrome.app.runtime.onLaunched.addListener(
+    function() {
+        console.log('firing');
+        chrome.app.window.create('src/browser_action/browser_action.html',
+            {
+                state: "fullscreen",
+            }
+        );
+    }
+);
