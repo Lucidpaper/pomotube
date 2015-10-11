@@ -3,7 +3,6 @@
 // Make sure it's in client
 if (Meteor.isClient) {    
     
-    
     // YouTube API will call onYouTubeIframeAPIReady() when API ready.
     // Make sure it's a global variable.
     onYouTubeIframeAPIReady = function () {

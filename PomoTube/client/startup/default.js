@@ -12,4 +12,8 @@ Meteor.startup(function(){
 		   });
 	   }
    });
+   
+    var scopes = ['https://www.googleapis.com/auth/youtube.readonly', 'email', 'profile'];
+    Accounts.ui.config({'requestPermissions':{'google':scopes}});
+   
 });
