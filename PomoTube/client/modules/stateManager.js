@@ -105,7 +105,6 @@ stateManager = {
 				stateManager.start(endState);
 			});
 		}
-		
 		stateManager.endPreviousState();
 		Session.set('timer_state', newState);
 		if(_.has(stateDetails, 'on_change')) {
