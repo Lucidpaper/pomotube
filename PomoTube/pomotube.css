@@ -1,1 +1,8 @@
 /* CSS declarations go here */
+.btn-start:hover, .btn-start:focus{
+    background-color: #B9F6CA;
+}
+
+.btn-stop:hover, .btn-stop:focus{
+    background-color: #FF8A80;
+}
