@@ -34,6 +34,11 @@ if(Meteor.isServer) {
 		removeUser : function(userID) {
 			Meteor.users.remove(userID);			
 		},
+		resetConfiguration: function() {
+			ServiceConfiguration.configurations.remove({
+			  service: "google"
+			});		
+		}
 	});
 	
 	
