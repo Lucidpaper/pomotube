@@ -4,8 +4,12 @@
 	Tracker.autorun(function(){
 		if(Meteor.user()) {
 			var watchList = Meteor.user()['profile']['watch_list'];
-			videoID = watchList[0]['contentDetails']['videoId'];
-			YT.load();
+			if(watchList == undefined) {
+				Meteor.call('setWatchLaterPlaylist', Meteor.userId());
+			} else {
+				videoID = watchList[0]['contentDetails']['videoId'];
+				YT.load();
+			}
 		}
 	});
 

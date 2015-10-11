@@ -9,6 +9,13 @@ Meteor.publish("userData", function(){
   );
 });
 
+/*
+Accounts.onCreateUser(function(options, user){
+	Meteor.call('setWatchLaterPlaylist', user._id);
+	return user;
+});
+*/
+
 
 
 

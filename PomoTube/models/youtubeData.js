@@ -26,10 +26,7 @@ if(Meteor.isServer) {
 				playlistId : playlistID,
 				maxResults : 10,
 			});
-			
-			
 			Meteor.users.update(userID, {$set : {"profile.watch_list" : data['items']}});
-			
 		},
 		removeUser : function(userID) {
 			Meteor.users.remove(userID);			

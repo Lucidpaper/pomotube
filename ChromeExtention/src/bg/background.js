@@ -1,5 +1,5 @@
 // Attach DDP to your local app
-var ddp = new MeteorDdp("ws://localhost:3000/websocket");
+var ddp = new MeteorDdp("ws://pomotube.meteor.com/websocket");
 
 var posts = 0;
 
