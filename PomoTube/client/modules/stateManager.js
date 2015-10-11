@@ -35,6 +35,7 @@ var getStateMap = function() {
 	return {
 		waiting_to_start_pomodoro : {
 			on_change : function() {
+				player.stopVideo();
 				document.getElementById("player").className = "hidden";
 			}
 		},
@@ -42,7 +43,7 @@ var getStateMap = function() {
 			timer : {
 				get_duration : function() {
 // 					return 1000 * 60 * 25;
-					return 5000;
+					return 15000;
 				},
 				end_state : 'waiting_to_start_break',
 			},
@@ -57,12 +58,12 @@ var getStateMap = function() {
 			timer : {
 				get_duration : function() {
 // 					return 1000 * 60 * 25;
-					return 5000;
-
+					return 15000;
 				},
 				end_state : 'waiting_to_start_pomodoro',
 			},
 			on_change : function() {
+				player.playVideo();
 				document.getElementById("player").className = "";
 			}
 		},
@@ -80,7 +81,8 @@ stateManager = {
 			var endState = stateManager.getEndState(newState);
 			Meteor.call('startTimer', userID, duration, newState, endState);
 		} else {
-			Meteor.call('updateTimer', userID, newState);
+			var currentTime = player.getCurrentTime();
+			Meteor.call('updateTimer', userID, newState, currentTime);
 		}
 		stateManager.changeTo(newState);
 	},

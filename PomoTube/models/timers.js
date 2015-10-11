@@ -8,11 +8,12 @@ if(Meteor.isServer) {
 		startTimer : function(userID, duration, startState, endState) {
 			runTimer(userID, duration, startState, endState);
 		},
-		updateTimer : function(userID, newState) {
+		updateTimer : function(userID, newState, currentTime) {
 			var timer = {
 				user_id : userID,
 				started_time : null,
 				state : newState,
+				current_time : currentTime,
 			};
 			Meteor.clearTimeout(timerHandlers[userID]);
 			Timers.upsert({user_id : userID}, {$set : timer});
