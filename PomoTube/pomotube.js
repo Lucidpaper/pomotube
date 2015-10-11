@@ -9,8 +9,8 @@ if (Meteor.isClient) {
         // Make sure it's a global variable.
         player = new YT.Player("player", {
 
-            height: "400", 
-            width: "600", 
+            height: "390",
+            width: "590",
 
             // videoId is the "v" in URL (ex: http://www.youtube.com/watch?v=LdH1hSWGFGU, videoId = "LdH1hSWGFGU")
             videoId: "LdH1hSWGFGU", 
