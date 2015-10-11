@@ -1,8 +1,8 @@
 {
-  "name": "Meteor Extension Biolerplate",
+  "name": "PomoTube",
   "version": "0.0.1",
   "manifest_version": 2,
-  "description": "Boilerplate for a Meteor extension demoing both iframe & DDP connection",
+  "description": "Pomodoro ",
   "homepage_url": "http://extensionizr.com",
   "icons": {
     "16": "icons/icon16.png",
