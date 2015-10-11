@@ -21,3 +21,4 @@ insecure                # Allow all DB writes from clients (for prototyping)
 adrianliaw:youtube-iframe-api
 twbs:bootstrap
 fortawesome:fontawesome
+momentjs:moment
