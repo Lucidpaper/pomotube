@@ -14,7 +14,6 @@ if (Meteor.isClient) {
 
             height: "390",
             width: "590",
-
             // videoId is the "v" in URL (ex: http://www.youtube.com/watch?v=LdH1hSWGFGU, videoId = "LdH1hSWGFGU")
             videoId: "LdH1hSWGFGU", 
 

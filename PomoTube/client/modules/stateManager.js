@@ -41,8 +41,8 @@ var getStateMap = function() {
 		in_pomodoro : {
 			timer : {
 				get_duration : function() {
-					return 1000 * 60 * 25;
-// 					var periodLength = 5000;
+// 					return 1000 * 60 * 25;
+					return 5000;
 				},
 				end_state : 'waiting_to_start_break',
 			},
@@ -56,7 +56,8 @@ var getStateMap = function() {
 		in_break : {
 			timer : {
 				get_duration : function() {
-					return 1000 * 60 * 25;
+// 					return 1000 * 60 * 25;
+					return 5000;
 
 				},
 				end_state : 'waiting_to_start_pomodoro',
