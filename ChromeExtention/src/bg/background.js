@@ -13,6 +13,7 @@ var posts = 0;
 ddp.connect().then(function(){
 
 	//Subscribe to a publication - in this case I publish the collection 'posts' as 'all_posts'
+/*
 	ddp.subscribe('all_posts');
 
 	//Watch that collection
@@ -26,15 +27,5 @@ ddp.connect().then(function(){
 		//Update the browser badge to show how many posts there are
 		chrome.browserAction.setBadgeText({text: posts.toString()});
 	});
+*/
 });
-
-chrome.app.runtime.onLaunched.addListener(
-    function() {
-        console.log('firing');
-        chrome.app.window.create('src/browser_action/browser_action.html',
-            {
-                state: "fullscreen",
-            }
-        );
-    }
-);

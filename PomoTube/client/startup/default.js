@@ -1,6 +1,7 @@
 Meteor.startup(function(){
    Deps.autorun(function(){
-	   if(Meteor.userId() != null) {
+    
+    	if(Meteor.userId() != null) {
 		   var userID = Meteor.userId();
 		   Meteor.subscribe('timer', userID, function(){
 			   var timer = Timers.findOne({user_id : userID});

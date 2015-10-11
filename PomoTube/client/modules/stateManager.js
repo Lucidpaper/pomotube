@@ -35,7 +35,6 @@ var getStateMap = function() {
 	return {
 		waiting_to_start_pomodoro : {
 			on_change : function() {
-				player.stopVideo();
 				document.getElementById("player").className = "hidden";
 			}
 		},
@@ -47,9 +46,9 @@ var getStateMap = function() {
 				},
 				end_state : 'waiting_to_start_break',
 			},
-			get_duration : function() {
-				
-			},
+			on_end : function() {
+				sendNotification("Pomodoro Over");
+			}
 		},
 		waiting_to_start_break : {
 			
@@ -65,7 +64,11 @@ var getStateMap = function() {
 			on_change : function() {
 				player.playVideo();
 				document.getElementById("player").className = "";
-			}
+			},
+			on_end : function() {
+				player.stopVideo();
+				sendNotification("Break finished");	
+			},
 		},
 	};
 }
@@ -102,9 +105,20 @@ stateManager = {
 				stateManager.start(endState);
 			});
 		}
+		
+		stateManager.endPreviousState();
 		Session.set('timer_state', newState);
 		if(_.has(stateDetails, 'on_change')) {
 			stateDetails['on_change']();
+		}
+	},
+	endPreviousState : function() {
+		var previousState = Session.get('timer_state');
+		if(previousState != null) {
+			 var stateDetails = getStateMap()[previousState];
+			 if(_.has(stateDetails, 'on_end')){
+				 stateDetails['on_end']();
+			 }
 		}
 	},
 	getDuration : function(stateName) {
