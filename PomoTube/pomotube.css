@@ -1,9 +1,10 @@
 /* CSS declarations go here */
 .hidden {
 	display : none;
-.btn-start:hover, .btn-start:focus{
+}
+.start-pom:hover, .start-pom:focus{
     background-color: #B9F6CA;
 }
-.btn-stop:hover, .btn-stop:focus{
+.stop-pom:hover, .stop-pom:focus{
     background-color: #FF8A80;
 }
