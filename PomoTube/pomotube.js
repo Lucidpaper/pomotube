@@ -39,6 +39,12 @@ if (Meteor.isClient) {
     YT.load();
     
 	Template['main'].helpers({
+		in_break : function() {
+			return stateManager.isInState('in_break');
+		},	
+		show_clock_icon : function() {
+			return stateManager.isInState('in_pomodoro') || stateManager.isInState('waiting_to_start_pomodoro');	
+		},
 		in_pomodoro : function() {
 			return stateManager.isInState('in_pomodoro');
 		},
