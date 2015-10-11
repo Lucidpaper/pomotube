@@ -74,11 +74,12 @@ stateManager = {
 		var stateMap = getStateMap();
 		var stateDetails = stateMap[newState];
 		var duration = stateManager.getDuration(newState);
+		var userID = Meteor.userId();
 		if(duration != null) {
 			var endState = stateManager.getEndState(newState);
-			Meteor.call('startTimer', 'test1', duration, newState, endState);
+			Meteor.call('startTimer', userID, duration, newState, endState);
 		} else {
-			Meteor.call('updateTimer', 'test1', newState);
+			Meteor.call('updateTimer', userID, newState);
 		}
 		stateManager.changeTo(newState);
 	},
