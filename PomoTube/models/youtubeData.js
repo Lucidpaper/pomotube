@@ -1,7 +1,6 @@
 if(Meteor.isServer) {
 	Meteor.methods({
 		setWatchLaterPlaylist : function(userID) {
-			Meteor.call('exchangeRefreshToken', userID);
 			var user = Meteor.users.findOne(userID);
 			var accessToken = user.services.google.accessToken;
 			Youtube.authenticate({
